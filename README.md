@@ -24,3 +24,8 @@ Kamera memerlukan localhost atau HTTPS dan izin browser. Video diproses lokal de
 Aset 3D prosedural dibuat di scene.js; logika kalibrasi di tracking.js. Aset tidak dibuat melalui Higgsfield atau Magnific karena integrasinya tidak tersedia dalam sesi ini.
 
 Tes pelacakan: `node --test tests/tracking.test.mjs`. Browser regression menguji renderer, main ulang kamera dan UI dengan input deteksi simulasi; akurasi dengan pengguna nyata belum diukur.
+
+## Living workshop and audio
+`textures.js` generates local wrapping-paper, woodgrain, woven cloth, brushed metal, brick, snow and winter-window textures. `decor.js` adds candy-cane posts, teddy bears, robots, wooden horses, turning machine wheels, moving gift trays, a miniature train with steam and snowfall. Static decor is batched by material to reduce draw calls.
+
+`audio.js` synthesizes an original looping Christmas music-box waltz, bass and bell tones in Web Audio. Music starts after a play gesture, pauses with the game, and resumes without creating duplicate loops. Music (default 50%) and effects (85%) have independent volume sliders; the top music button mutes both. A master compressor controls peaks. No external music files or downloads are required. Actual loudness depends on device/system volume. Magnific and Figma were unavailable in this session; no assets are attributed to those plugins.
