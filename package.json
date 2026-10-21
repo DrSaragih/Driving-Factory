@@ -1,0 +1,16 @@
+{
+  "name": "north-pole-toy-factory",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "postinstall": "node scripts/setup.mjs"
+  },
+  "dependencies": {
+    "@mediapipe/face_detection": "^0.4.1646425229",
+    "vite": "6.4.1"
+  }
+}
