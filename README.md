@@ -13,7 +13,7 @@ Build: `npm run build`. Preview build: `npm run preview`.
 
 ## Mekanik
 - 60 detik, 3 nyawa, 3 jalur.
-- Hadiah +10; bintang +50; kotak rusak mengurangi nyawa.
+- Hadiah biru-sian +10; bintang emas +50; ranjau merah berduri mengurangi nyawa.
 - Kamera: tahan kepala di tengah selama kalibrasi 24 frame stabil. Sensitivitas disesuaikan ukuran wajah, dengan smoothing, hysteresis, dan jeda konfirmasi untuk mengurangi perpindahan akibat jitter. Geser kepala ke kiri/kanan untuk pindah jalur. Tombol Kalibrasi ulang menetapkan pusat baru. Jika wajah hilang lebih dari 2 detik, game dijeda. Pastikan pencahayaan cukup. Kamera tetap aktif pada hasil akhir, dan Main lagi mempertahankan mode kamera serta melakukan kalibrasi ulang. Matikan kamera memakai tombol atau tutup halaman.
 - Alternatif: tombol panah / A dan D / sentuh separuh kiri atau kanan arena.
 - Space / Escape untuk jeda; tab tidak aktif otomatis menjeda.
@@ -32,3 +32,6 @@ Tes pelacakan: `node --test tests/tracking.test.mjs`. Browser regression menguji
 
 ## Christmas panorama
 `atmosphere.js` draws a full-viewport North Pole panorama locally: aurora, starfield, moon, snowy mountains, illuminated village, forest and distant Santa sleigh. The rear wall is removed so the background is visible; the workshop sign is lowered and camera/fog/light settings blend the open-air factory with the winter scenery. A translucent 3D aurora layer moves above the village. No remote image download is required.
+
+## Collision and collectible readability
+`gameplay-space.js` shares lane spacing and depth mapping with the renderer. Collision checks sweep relative item/player world positions using the same interpolated player position drawn that frame. Decorative rays and halos do not cause hits. A mine hit grants one second of protection with a blinking elf. Larger cyan gifts with gold ribbons and red spiked mines float and rotate above color-coded rings, halos and light columns. Run `node --test tests/*.test.mjs` for collision and tracking regressions.
