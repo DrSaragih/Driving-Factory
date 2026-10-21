@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@mediapipe/face_detection": "^0.4.1646425229",
+    "three": "^0.183.2",
     "vite": "6.4.1"
   }
 }
